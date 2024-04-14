@@ -46,7 +46,7 @@ def yellow():
 
 
 
-£buttons
+#buttons
 red_button=Button(root, text='RED', command=red).pack()
 Green_button=Button(root, text='Green', command=green).pack()
 Yellow_button=Button(root, text='Yellow', command=yellow).pack()

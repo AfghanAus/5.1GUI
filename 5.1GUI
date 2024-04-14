@@ -1,0 +1,56 @@
+from tkinter import *
+import RPi.GPIO as GPIO
+
+root = Tk()
+root.geometry('300x300')
+root.title('LED Controller')
+
+# Initialize the GPIO
+GPIO.setmode(GPIO.BCM)
+red_LED = 18
+green_LED= 23
+yellow_LED=24
+
+GPIO.setup(red_LED, GPIO.OUT)  # Set red LED pin as an output
+GPIO.setup(green_LED, GPIO.OUT)
+GPIO.setup(yellow_LED, GPIO.OUT)
+
+
+#FUNCTIONS 
+def red():
+    # Toggle the state of the red LED
+    if GPIO.input(red_LED) == GPIO.HIGH:
+        GPIO.output(red_LED, GPIO.LOW)
+      
+    else:
+        GPIO.output(red_LED, GPIO.HIGH)
+       
+
+def green():
+    # Toggle the state of the green LED
+    if GPIO.input(green_LED) == GPIO.HIGH:
+        GPIO.output(green_LED, GPIO.LOW)
+        
+    else:
+        GPIO.output(green_LED, GPIO.HIGH)
+
+
+def yellow():
+    # Toggle the state of the yellow LED
+    if GPIO.input(yellow_LED) == GPIO.HIGH:
+        GPIO.output(yellow_LED, GPIO.LOW)
+        
+    else:
+        GPIO.output(yellow_LED, GPIO.HIGH)
+        
+
+
+
+£buttons
+red_button=Button(root, text='RED', command=red).pack()
+Green_button=Button(root, text='Green', command=green).pack()
+Yellow_button=Button(root, text='Yellow', command=yellow).pack()
+
+
+
+root.mainloop()
